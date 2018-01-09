@@ -37,9 +37,9 @@ namespace metrostyle
                 MessageBox.Show("You cannot leave boxes empty");
             else
             {
-                SqlConnection sqlConn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\bimstajyer1\Documents\loginapp.mdf; Integrated Security = True; Connect Timeout = 30");
+                SqlConnection sqlConn = new SqlConnection("Your connection string here");
                 bool exists = false;
-                using (SqlCommand cmd = new SqlCommand("select count(*) from loginapptable where Username = @UserName", sqlConn))
+                using (SqlCommand cmd = new SqlCommand("select count(*) from yourdatabasetablehere where Username = @UserName", sqlConn))
                 {
                     cmd.Parameters.AddWithValue("Username", metroTextBox1.Text);
                     sqlConn.Open();
