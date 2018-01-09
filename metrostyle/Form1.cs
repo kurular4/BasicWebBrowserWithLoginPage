@@ -38,8 +38,8 @@ namespace metrostyle
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\bimstajyer1\Documents\loginapp.mdf;Integrated Security=True;Connect Timeout=30");
-            string query = "Select * from loginapptable where Username = '" + metroTextBox1.Text + "' and Password = '" + metroTextBox2.Text + "'";
+            SqlConnection conn = new SqlConnection("your connection string here");
+            string query = "Select * from yourdatabsetablehere where Username = '" + metroTextBox1.Text + "' and Password = '" + metroTextBox2.Text + "'";
             SqlDataAdapter sda = new SqlDataAdapter(query, conn);
             DataTable dtb1 = new DataTable();
             sda.Fill(dtb1);
